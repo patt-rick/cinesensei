@@ -118,6 +118,7 @@ export default function SearchPage() {
               setResults([]);
               setSearched(false);
             }}
+            aria-label="Clear search"
             className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
           >
             <X size={16} />

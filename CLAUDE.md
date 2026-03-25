@@ -105,6 +105,14 @@ npm run test       # Jest unit tests
 npm run test:e2e   # Playwright E2E
 ```
 
+## Current State
+
+- **Deploy URL**: https://cinesensei-s5r2ggkjeq-uc.a.run.app
+- **Smoke tests**: PASSING (deployed 2026-03-25)
+- **E2E tests**: Playwright suite in `e2e/` (api, discover, home, lottery, navigation, search, auth, smoke)
+- **Unit tests**: Jest configured; no unit test files yet
+- **Final review**: README rewritten, aria-labels added to all icon-only buttons
+
 ## Documentation Hierarchy
 
 | Layer                     | Loaded             | What goes here                                 |

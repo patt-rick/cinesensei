@@ -131,6 +131,7 @@ export default function HomePage() {
           <div className="absolute bottom-4 right-6 flex items-center gap-2">
             <button
               onClick={() => setHeroIndex((i) => (i - 1 + heroCount) % heroCount)}
+              aria-label="Previous slide"
               className="p-1 text-white/60 hover:text-white"
             >
               <ChevronLeft size={18} />
@@ -139,6 +140,7 @@ export default function HomePage() {
               <button
                 key={i}
                 onClick={() => setHeroIndex(i)}
+                aria-label={`Go to slide ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all ${
                   i === heroIndex ? "bg-white w-4" : "bg-white/40 w-1.5"
                 }`}
@@ -146,6 +148,7 @@ export default function HomePage() {
             ))}
             <button
               onClick={() => setHeroIndex((i) => (i + 1) % heroCount)}
+              aria-label="Next slide"
               className="p-1 text-white/60 hover:text-white"
             >
               <ChevronRight size={18} />

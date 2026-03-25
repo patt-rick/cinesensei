@@ -18,13 +18,15 @@ test.describe("Search page", () => {
 
   test("searching returns results from stub data", async ({ page }) => {
     await page.goto("/search");
+    const searchResponse = page.waitForResponse(
+      (res) => res.url().includes("/api/search"),
+      { timeout: 5000 }
+    );
     await page.fill("input[placeholder*='Search']", "demon");
-    // Wait for debounce and results
-    await page.waitForTimeout(600);
-    // Results should appear or empty state
+    await searchResponse;
     const grid = page.locator(".grid");
     const emptyState = page.locator("text=No results found");
-    await expect(grid.or(emptyState)).toBeVisible({ timeout: 10000 });
+    await expect(grid.or(emptyState)).toBeVisible({ timeout: 5000 });
   });
 
   test("type filter buttons are visible", async ({ page }) => {

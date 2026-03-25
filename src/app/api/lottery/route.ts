@@ -6,8 +6,10 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const type = searchParams.get("type") || "all";
   const genre = searchParams.get("genre") || "";
-  const year = searchParams.get("year") || "";
-  const count = parseInt(searchParams.get("count") || "8");
+  const rawYear = searchParams.get("year") || "";
+  const year = /^\d{4}$/.test(rawYear) ? rawYear : "";
+  const rawCount = parseInt(searchParams.get("count") || "8");
+  const count = Number.isFinite(rawCount) ? Math.min(Math.max(rawCount, 1), 20) : 8;
 
   let pool: Title[];
   if (type === "anime") pool = [...STUB_ANIME];

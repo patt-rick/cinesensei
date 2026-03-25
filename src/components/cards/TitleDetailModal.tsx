@@ -67,6 +67,7 @@ export function TitleDetailModal({
             <div className="p-5">
               <button
                 onClick={onClose}
+                aria-label="Close"
                 className="absolute top-4 right-4 bg-black/50 p-1.5 rounded-full text-gray-400 hover:text-white transition-colors"
               >
                 <X size={18} />

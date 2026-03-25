@@ -3,9 +3,9 @@ import { test, expect } from "@playwright/test";
 test.describe("Home page", () => {
   test("loads and shows navigation", async ({ page }) => {
     await page.goto("/");
-    // Navigation should be visible
-    await expect(page.locator("text=CineSensei")).toBeVisible();
-    await expect(page.locator("nav")).toBeVisible();
+    await expect(page).toHaveTitle(/CineSensei/);
+    // At least one Discover nav link is visible (sidebar on desktop, bottom bar on mobile)
+    await expect(page.locator("a[href='/discover']:visible")).toBeVisible();
   });
 
   test("shows hero section", async ({ page }) => {

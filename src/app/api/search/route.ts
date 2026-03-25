@@ -44,7 +44,8 @@ export async function GET(req: NextRequest) {
   const q = searchParams.get("q") || "";
   const type = searchParams.get("type") || "all";
   const genre = searchParams.get("genre") || "";
-  const year = searchParams.get("year") || "";
+  const rawYear = searchParams.get("year") || "";
+  const year = /^\d{4}$/.test(rawYear) ? rawYear : "";
   const language = searchParams.get("language") || "";
 
   if (!q && !genre && !year) {

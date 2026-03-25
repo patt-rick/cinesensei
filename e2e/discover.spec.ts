@@ -26,7 +26,9 @@ test.describe("Discover page", () => {
 
   test("shows title cards after loading", async ({ page }) => {
     await page.goto("/discover");
-    // Wait for skeleton to disappear
-    await page.waitForSelector(".grid", { timeout: 15000 });
+    // Wait for the grid to appear and have at least one child rendered
+    await page.waitForSelector(".grid > *", { timeout: 15000 });
+    const firstCard = page.locator(".grid > *").first();
+    await expect(firstCard).toBeVisible();
   });
 });

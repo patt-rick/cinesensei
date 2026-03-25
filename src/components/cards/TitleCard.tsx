@@ -91,6 +91,7 @@ export function TitleCard({
         {onAddToWatchlist && (
           <button
             onClick={handleWatchlistClick}
+            aria-label={isInWatchlist ? "Remove from watchlist" : "Add to watchlist"}
             className={cn(
               "absolute top-2 right-2 p-1.5 rounded-full transition-all duration-150 opacity-0 group-hover:opacity-100",
               isInWatchlist
