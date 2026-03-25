@@ -1,4 +1,6 @@
 {
+  "githubRepo": "https://github.com/patt-rick/cinesensei",
   "deployUrl": "https://cinesensei-s5r2ggkjeq-uc.a.run.app",
-  "githubRepo": null
+  "smokeTestStatus": "PASSING",
+  "builtAt": "2026-03-25T00:00:00.000Z"
 }
