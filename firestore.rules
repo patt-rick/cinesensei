@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public title cache - readable by all, writable only by server
+    match /titles/{titleId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // User documents - only the user can read/write their own data
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+
+      // Watchlist subcollection
+      match /watchlist/{titleId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+
+      // Ratings subcollection
+      match /ratings/{titleId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+  }
+}
