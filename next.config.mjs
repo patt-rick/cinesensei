@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "s4.anilist.co",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
     ],
   },
   async headers() {
@@ -29,7 +33,7 @@ const nextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: https://image.tmdb.org https://s4.anilist.co",
+              "img-src 'self' data: https://image.tmdb.org https://s4.anilist.co https://lh3.googleusercontent.com",
               "connect-src 'self' https://graphql.anilist.co https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com wss://*.firebaseio.com",
               "font-src 'self'",
               "frame-src 'none'",

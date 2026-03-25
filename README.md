@@ -23,7 +23,7 @@ selector, animated UI, and user watchlists. Data is sourced from TMDb (movies/TV
 git clone https://github.com/patt-rick/cinesensei.git
 cd cinesensei
 npm install
-cp .env.local.example .env.local   # then fill in your values
+# Create .env.local and fill in your values (see Environment Variables below)
 npm run dev
 ```
 

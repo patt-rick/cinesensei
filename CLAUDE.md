@@ -111,7 +111,7 @@ npm run test:e2e   # Playwright E2E
 - **Smoke tests**: PASSING (deployed 2026-03-25)
 - **E2E tests**: Playwright suite in `e2e/` (api, discover, home, lottery, navigation, search, auth, smoke)
 - **Unit tests**: Jest configured; no unit test files yet
-- **Final review**: README rewritten, aria-labels added to all icon-only buttons
+- **Final review**: Google avatar domain added to CSP/remotePatterns, console.error replaced with toast, aria-labels complete
 
 ## Documentation Hierarchy
 

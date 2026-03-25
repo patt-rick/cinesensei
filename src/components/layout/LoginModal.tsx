@@ -5,6 +5,7 @@ import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { X, Film } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "sonner";
 
 interface LoginModalProps {
   open: boolean;
@@ -20,8 +21,8 @@ export function LoginModal({ open, onClose }: LoginModalProps) {
     try {
       await signInWithGoogle();
       onClose();
-    } catch (err) {
-      console.error("Sign-in failed", err);
+    } catch {
+      toast.error("Sign-in failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -46,6 +47,7 @@ export function LoginModal({ open, onClose }: LoginModalProps) {
           >
             <button
               onClick={onClose}
+              aria-label="Close"
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
             >
               <X size={20} />
