@@ -1,0 +1,52 @@
+{
+  "assumptions": [
+    {
+      "category": "stack",
+      "detail": "analysis.json was absent — derived stack from CLAUDE.md: Next.js App Router, Firebase, Cloud Run, Tailwind + shadcn/ui"
+    },
+    {
+      "category": "feature",
+      "detail": "AI recommendations are simulated via genre/rating-based scoring on stub data — no external AI API or LLM integration used"
+    },
+    {
+      "category": "feature",
+      "detail": "TMDb API key absent — all TMDb calls fall back to curated stub movie data (8 movies). Real data loads automatically when TMDB_API_KEY is set"
+    },
+    {
+      "category": "feature",
+      "detail": "AniList is a public GraphQL API with no key required — trending anime fetched live. Stub data used as fallback if AniList is unreachable"
+    },
+    {
+      "category": "feature",
+      "detail": "Apple OAuth skipped — Google OAuth only via Firebase Auth (Apple requires paid Developer account)"
+    },
+    {
+      "category": "feature",
+      "detail": "Sound effects implemented with Web Audio API oscillator tones — no external audio CDN or bundled audio files"
+    },
+    {
+      "category": "feature",
+      "detail": "Streaming platform availability (Netflix, Disney+, etc.) displayed as static metadata on stub titles — no live availability API integration"
+    },
+    {
+      "category": "feature",
+      "detail": "PWA: manifest.json only — no full service worker offline caching implemented per CLAUDE.md constraints"
+    },
+    {
+      "category": "feature",
+      "detail": "Lottery wheel uses CSS rotateY animation on the card during spin phase + Framer Motion for the reveal — no physical spinning wheel SVG"
+    },
+    {
+      "category": "feature",
+      "detail": "Confetti is implemented with Framer Motion animated divs instead of canvas-confetti library, to avoid canvas rendering issues in SSR"
+    },
+    {
+      "category": "infra",
+      "detail": "Firestore named database 'cine-sensei' used for all reads/writes per runner pre-creation. NEXT_PUBLIC_FIRESTORE_DATABASE env var controls this"
+    },
+    {
+      "category": "stack",
+      "detail": "shadcn/ui v4 used (with @base-ui/react) — newer API than radix-based v2. Components initialized with defaults flag"
+    }
+  ]
+}
